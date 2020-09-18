@@ -22,7 +22,6 @@ Page({
       },
       fail: console.error
     });
-
   },
 
 

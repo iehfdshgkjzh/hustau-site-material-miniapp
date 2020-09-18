@@ -16,12 +16,13 @@ App({
     } else {
       wx.cloud.init({
         traceUser: true,
-        env: "cloud-miniapp-96177b"
-        // env: "release-824dd3"
+        // env: "cloud-miniapp-96177b"
+        env: "release-824dd3"
       });
     }
   },
-  /**
+
+    /**
    * _toDateStr()
    * 将Date对象转为"Y-m-d"字符串.
    * @param {Date} date 需要转换的日期对象
@@ -44,5 +45,5 @@ App({
       }
     }
     return str;
-  }
+  },
 })

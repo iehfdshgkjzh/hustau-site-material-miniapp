@@ -12,7 +12,8 @@ var today = app._toDateStr(new Date(),true);
 Page({
   data: {
     validStartingDate: app._toDateStr(new Date(),true),
-    validEndingDate: app._toDateStr(new Date().setDate(new Date().getDate()+14), true), //14 days after today
+    validEndingDate: app._toDateStr(new Date(new Date().setDate(new Date().getDate()+14)), true), 
+    validEndingDate2: app._toDateStr(new Date(new Date().setDate(new Date().getDate()+28)), true),
     date1: today, //借用时间
     date2: today,
     itemname: [],
@@ -23,7 +24,7 @@ Page({
     const PAGE = this
     this.setData(options)
     account[0] = options.itemcount;
-    console.log('borrowThings form: PAGE.data',PAGE.data)
+    console.log(app._toDateStr(new Date(new Date().setDate(new Date().getDate()+14)), true))
   },
   bindDateChange1: function (e) {
     this.setData({
@@ -128,6 +129,16 @@ Page({
         confirmText: "确定"
       });
       return;
+    }
+    //若 归还日期 大于 借用日期+14
+    if (contents["eventTime2"] > contents["eventTime1"] + 14) {
+      wx.showModal({
+        title: "信息不完整或有错误",
+        content: "请重新选择日期",
+        showCancel: false,
+        confirmText: "确定"
+      });
+      return; 
     }
     //若 借用用途 为空：
     if (contents["description"].length === 0) {

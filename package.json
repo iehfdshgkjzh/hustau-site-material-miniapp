@@ -1,0 +1,17 @@
+{
+  "name": "hustau",
+  "version": "1.0.0",
+  "description": "# 场地借用系统",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jsdoc": "^3.6.5"
+  }
+}
